@@ -8,9 +8,8 @@ describe('GameScreenComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ GameScreenComponent ]
-    })
-    .compileComponents();
+      declarations: [GameScreenComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {

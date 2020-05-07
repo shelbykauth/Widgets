@@ -12,13 +12,10 @@ import { HomeScreenComponent } from './home-screen/home-screen.component';
     AppComponent,
     AboutComponent,
     GameScreenComponent,
-    HomeScreenComponent
+    HomeScreenComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

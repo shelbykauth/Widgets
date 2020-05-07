@@ -13,5 +13,8 @@
     "Hangman-e2e": "npm run e2e --prefix Hangman/webapp"
   },
   "author": "Shelby Kauth",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "prettier": "^2.0.5"
+  }
 }
