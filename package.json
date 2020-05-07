@@ -1,0 +1,17 @@
+{
+  "name": "widgets",
+  "version": "0.0.1",
+  "description": "Random Widgets and Web Toys",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "Hangman-ng": "npm run ng --prefix Hangman/webapp",
+    "Hangman-start": "npm run start --prefix Hangman/webapp -- --open",
+    "Hangman-build": "npm run build --prefix Hangman/webapp",
+    "Hangman-test": "npm run test --prefix Hangman/webapp",
+    "Hangman-lint": "npm run lint --prefix Hangman/webapp",
+    "Hangman-e2e": "npm run e2e --prefix Hangman/webapp"
+  },
+  "author": "Shelby Kauth",
+  "license": "ISC"
+}
