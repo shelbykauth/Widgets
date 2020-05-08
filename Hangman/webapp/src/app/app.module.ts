@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { AboutComponent } from './about/about.component';
 import { GameScreenComponent } from './game-screen/game-screen.component';
 import { HomeScreenComponent } from './home-screen/home-screen.component';
+import { AngularHelpComponent } from './angular-help/angular-help.component';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { HomeScreenComponent } from './home-screen/home-screen.component';
     AboutComponent,
     GameScreenComponent,
     HomeScreenComponent,
+    AngularHelpComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
