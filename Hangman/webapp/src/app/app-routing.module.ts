@@ -6,10 +6,10 @@ import { GameScreenComponent } from './game-screen/game-screen.component';
 import { HomeScreenComponent } from './home-screen/home-screen.component';
 
 const routes: Routes = [
-  { path: 'AngularHelp', component: AngularHelpComponent },
-  { path: 'AboutComponent', component: AboutComponent },
-  { path: 'GameScreenComponent', component: GameScreenComponent },
-  { path: 'HomeScreenComponent', component: HomeScreenComponent },
+  { path: 'angular-help', component: AngularHelpComponent },
+  { path: 'about', component: AboutComponent },
+  { path: 'game', component: GameScreenComponent },
+  { path: 'home', component: HomeScreenComponent },
 ];
 
 @NgModule({
