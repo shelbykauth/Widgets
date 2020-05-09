@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./game-screen.component.less'],
 })
 export class GameScreenComponent implements OnInit {
+  wrongGuesses = 3;
+  totalGuesses = 6;
   constructor() {}
 
   ngOnInit(): void {}

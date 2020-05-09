@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   sodipodi:docname="Hangman_Pictures.svg"
+   inkscape:version="1.0 (4035a4f, 2020-05-01)"
+   id="Hangman_Picture"
+   version="1.1"
+   viewBox="0 0 114.43849 126.77084"
+   height="126.77084mm"
+   width="114.43849mm">
+  <defs />
+  <sodipodi:namedview
+     fit-margin-bottom="5"
+     fit-margin-right="5"
+     fit-margin-left="5"
+     fit-margin-top="5"
+     inkscape:window-maximized="0"
+     inkscape:window-y="23"
+     inkscape:window-x="0"
+     inkscape:window-height="1035"
+     inkscape:window-width="1252"
+     showgrid="false"
+     inkscape:document-rotation="0"
+     inkscape:document-units="mm"
+     inkscape:cy="312.27851"
+     inkscape:cx="335.91467"
+     inkscape:zoom="0.7"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     borderopacity="1.0"
+     bordercolor="#666666"
+     pagecolor="#ffffff"
+     id="base" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     transform="translate(4.232144,3.854167)"
+     inkscape:groupmode="layer"
+     inkscape:label="Hangman">
+    <g
+       class="podium"
+       transform="translate(-34.77381,-32.127976)">
+      <path
+         style="fill:none;stroke:#000000;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="M 37.041666,148.54465 H 89.20238 62.744047 V 34.77381 h 61.610113 v 20.032736"
+         id="path10"
+         sodipodi:nodetypes="cccccc" />
+      <path
+         style="fill:none;stroke:#000000;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="M 89.844367,34.773809 62.766976,60.667482"
+         id="path1277"
+         sodipodi:nodetypes="cc" />
+    </g>
+    <g
+       transform="translate(-34.77381,-32.127976)">
+      <circle
+         class="head"
+         style="fill:none;stroke:#322d38;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         cx="123.89876"
+         cy="62.706863"
+         r="7.2402205" />
+      <g
+         class="body">
+        <path
+           class="spine"
+           sodipodi:nodetypes="cc"
+           d="m 124.14669,70.024616 0.0668,23.920622"
+           style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+        <g
+           class="legs">
+          <path
+             class="right_leg"
+             style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+             d="m 124.21351,93.945238 11.55941,19.978402"
+             sodipodi:nodetypes="cc" />
+          <path
+             class="left_leg"
+             style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+             d="M 124.21351,93.945238 113.32228,112.2532"
+             sodipodi:nodetypes="cc" />
+        </g>
+        <g
+           class="arms">
+          <path
+             class="right_arm"
+             style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+             d="m 124.41397,74.033655 14.56619,12.561672"
+             sodipodi:nodetypes="cc" />
+          <path
+             class="left_arm"
+             style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+             d="M 124.41397,74.033655 110.11504,86.328056"
+             sodipodi:nodetypes="cc" />
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

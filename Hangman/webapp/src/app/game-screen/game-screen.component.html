@@ -1,1 +1,29 @@
 <p>game-screen works!</p>
+
+<form #dummyForm="ngForm">
+  <br />
+  Total Guesses: {{ totalGuesses }}
+  <br />
+  <input
+    name="totalGuesses"
+    [(ngModel)]="totalGuesses"
+    type="range"
+    min="0"
+    max="6"
+  />
+  <br />
+  Wrong Guesses: {{ wrongGuesses }}
+  <br />
+  <input
+    name="wrongGuesses"
+    [(ngModel)]="wrongGuesses"
+    type="range"
+    min="0"
+    [max]="totalGuesses"
+  />
+</form>
+
+<app-gallows-image
+  [wrongGuesses]="wrongGuesses"
+  [totalGuesses]="totalGuesses"
+></app-gallows-image>

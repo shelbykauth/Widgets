@@ -8,6 +8,7 @@ import { AboutComponent } from './about/about.component';
 import { GameScreenComponent } from './game-screen/game-screen.component';
 import { HomeScreenComponent } from './home-screen/home-screen.component';
 import { AngularHelpComponent } from './angular-help/angular-help.component';
+import { GallowsImageComponent } from './gallows-image/gallows-image.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { AngularHelpComponent } from './angular-help/angular-help.component';
     GameScreenComponent,
     HomeScreenComponent,
     AngularHelpComponent,
+    GallowsImageComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
