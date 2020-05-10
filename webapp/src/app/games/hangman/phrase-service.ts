@@ -8,7 +8,7 @@ const myPhrases = {
     'You rock',
     'Mama Bear',
     'Spoonful of sugar',
-    "Have a Fan-freaking-tastic mother's day",
+    "Have a Fan - freaking - tastic mother's day",
   ],
 };
 const allPhrases = [];

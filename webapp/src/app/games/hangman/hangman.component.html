@@ -3,6 +3,23 @@
   [ngClass]="hideWhatParts"
 ></app-gallows-image>
 
+<br />
+<p *ngIf="hasWon">You've won!</p>
+<p *ngIf="hasLost">You've lost!</p>
+<br />
+<div class="button-container">
+  <button
+    *ngFor="let letter of lettersList"
+    [value]="letter.name"
+    (click)="letter.guess()"
+    [disabled]="letter.guessed || disableButtons"
+    class="guessing-letters clickable"
+    [class.inWord]="letter.inWord"
+    [class.reveal]="letter.guessed || isRevealed"
+  >
+    {{ letter.name }}
+  </button>
+</div>
 <p class="display-phrase">{{ displayPhrase }}</p>
 <form id="DebugForm">
   Missed Guesses: {{ wrongGuesses }} / {{ totalGuesses }}
@@ -19,22 +36,3 @@
   <button (click)="reveal()">Reveal</button>
   <button (click)="continue()">Continue</button>
 </form>
-
-<br />
-<p *ngIf="hasWon">You've won!</p>
-<br />
-<p *ngIf="hasLost">You've lost!</p>
-<br />
-<div class="button-container">
-  <button
-    *ngFor="let letter of lettersList"
-    [value]="letter.name"
-    (click)="letter.guess()"
-    [disabled]="letter.guessed || disableButtons"
-    class="guessing-letters clickable"
-    [class.inWord]="letter.inWord"
-    [class.reveal]="letter.guessed || isRevealed"
-  >
-    {{ letter.name }}
-  </button>
-</div>
