@@ -9,7 +9,7 @@ import { AboutComponent } from './about/about.component';
 import { GameScreenComponent } from './games/hangman/hangman.component';
 import { HomeScreenComponent } from './home-screen/home-screen.component';
 import { AngularHelpComponent } from './angular-help/angular-help.component';
-import { GallowsImageComponent } from './gallows-image/gallows-image.component';
+import { GallowsImageComponent } from './games/hangman/gallows-image/gallows-image.component';
 
 @NgModule({
   declarations: [
