@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { GameScreenComponent } from './game-screen.component';
+import { GameScreenComponent } from './hangman.component';
 
 describe('GameScreenComponent', () => {
   let component: GameScreenComponent;

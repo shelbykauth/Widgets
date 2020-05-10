@@ -6,7 +6,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { AppComponent } from './app.component';
 import { AboutComponent } from './about/about.component';
-import { GameScreenComponent } from './game-screen/game-screen.component';
+import { GameScreenComponent } from './games/hangman/hangman.component';
 import { HomeScreenComponent } from './home-screen/home-screen.component';
 import { AngularHelpComponent } from './angular-help/angular-help.component';
 import { GallowsImageComponent } from './gallows-image/gallows-image.component';

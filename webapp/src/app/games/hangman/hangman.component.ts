@@ -161,8 +161,8 @@ export { partDecider };
 
 @Component({
   selector: 'app-game-screen',
-  templateUrl: './game-screen.component.html',
-  styleUrls: ['./game-screen.component.less'],
+  templateUrl: './hangman.component.html',
+  styleUrls: ['./hangman.component.less'],
 })
 export class GameScreenComponent implements OnInit {
   lastGuessedLetter: string;
