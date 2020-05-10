@@ -1,8 +1,12 @@
 Missed Guesses: {{ wrongGuesses }} / {{ totalGuesses }}
 <br />
+<p *ngIf="hasWon">You've won!</p>
+<br />
+<p *ngIf="hasLost">You've lost!</p>
+<br />
 <app-gallows-image
-  [wrongGuesses]="wrongGuesses"
-  [totalGuesses]="totalGuesses"
+  [class.hideParts]="true"
+  [ngClass]="hideWhatParts"
 ></app-gallows-image>
 
 <p class="display-phrase">{{ displayPhrase }}</p>
@@ -20,7 +24,7 @@ Missed Guesses: {{ wrongGuesses }} / {{ totalGuesses }}
   </button>
 </div>
 
-<form id="DebugForm" #debugForm="ngForm">
+<form id="DebugForm">
   <br />
   Total Guesses: {{ totalGuesses }}
   <br />
@@ -31,4 +35,5 @@ Missed Guesses: {{ wrongGuesses }} / {{ totalGuesses }}
     min="0"
     max="6"
   />
+  <button (click)="hiddenPhrase = 'Happy Mother\'s Day'">Reset</button>
 </form>
