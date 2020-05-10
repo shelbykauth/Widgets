@@ -5,12 +5,12 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "Hangman-ng": "npm run ng --prefix Hangman/webapp",
-    "Hangman-start": "npm run start --prefix Hangman/webapp -- --open",
-    "Hangman-build": "npm run build --prefix Hangman/webapp",
-    "Hangman-test": "npm run test --prefix Hangman/webapp",
-    "Hangman-lint": "npm run lint --prefix Hangman/webapp",
-    "Hangman-e2e": "npm run e2e --prefix Hangman/webapp"
+    "webapp-ng": "npm run ng --prefix webapp",
+    "webapp-start": "npm run start --prefix webapp -- --open",
+    "webapp-build": "npm run build --prefix webapp",
+    "webapp-test": "npm run test --prefix webapp",
+    "webapp-lint": "npm run lint --prefix webapp",
+    "webapp-e2e": "npm run e2e --prefix webapp"
   },
   "author": "Shelby Kauth",
   "license": "ISC",
