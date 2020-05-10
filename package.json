@@ -6,11 +6,12 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "webapp-ng": "npm run ng --prefix webapp",
-    "webapp-start": "npm run start --prefix webapp -- --open",
+    "webapp-start": "npm run start --prefix webapp",
     "webapp-build": "npm run build --prefix webapp",
     "webapp-test": "npm run test --prefix webapp",
     "webapp-lint": "npm run lint --prefix webapp",
-    "webapp-e2e": "npm run e2e --prefix webapp"
+    "webapp-e2e": "npm run e2e --prefix webapp",
+    "webapp-ghPages": "npm run ghPages --prefix webapp"
   },
   "author": "Shelby Kauth",
   "license": "ISC",
