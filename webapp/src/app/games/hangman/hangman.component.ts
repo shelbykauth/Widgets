@@ -160,11 +160,11 @@ const partDecider = {
 export { partDecider };
 
 @Component({
-  selector: 'app-game-screen',
+  selector: 'app-hangman',
   templateUrl: './hangman.component.html',
   styleUrls: ['./hangman.component.less'],
 })
-export class GameScreenComponent implements OnInit {
+export class HangmanComponent implements OnInit {
   lastGuessedLetter: string;
   _hiddenPhrase: string;
   hiddenCharacters: string[];

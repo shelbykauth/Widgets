@@ -1,0 +1,22 @@
+<h1>Games</h1>
+
+<div *ngIf="!hasGame">
+  <p>Below is a list of games</p>
+  <ul>
+    <a href="/games/hangman">
+      <li>
+        Hangman
+      </li>
+    </a>
+    <a href="/games/hangman/#mothersday">
+      <li>
+        Mother's Day Hangman
+      </li>
+    </a>
+  </ul>
+</div>
+
+<div class="game_container" *ngIf="true">
+  <app-hangman></app-hangman>
+  <ng-template game_container></ng-template>
+</div>
