@@ -319,6 +319,10 @@ export class GameScreenComponent implements OnInit {
     return this.wrongGuesses >= this.totalGuesses;
   }
 
+  get hasComplete() {
+    return this.hasWon || this.hasLost;
+  }
+
   constructor() {}
 
   ngOnInit(): void {
