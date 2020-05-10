@@ -15,7 +15,9 @@
     min="0"
     max="6"
   />
-  <button (click)="hiddenPhrase = 'Happy Mother\'s Day'">Reset</button>
+  <button (click)="reset()">Reset</button>
+  <button (click)="reveal()">Reveal</button>
+  <button (click)="continue()">Continue</button>
 </form>
 
 <br />
@@ -28,9 +30,10 @@
     *ngFor="let letter of lettersList"
     [value]="letter.name"
     (click)="letter.guess()"
-    [disabled]="letter.guessed"
+    [disabled]="letter.guessed || disableButtons"
     class="guessing-letters clickable"
     [class.inWord]="letter.inWord"
+    [class.reveal]="letter.guessed || isRevealed"
   >
     {{ letter.name }}
   </button>

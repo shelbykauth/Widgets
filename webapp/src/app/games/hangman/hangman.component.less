@@ -13,8 +13,17 @@ button.guessing-letters {
   border-radius: 0.3em;
   margin: 0.2em;
 }
-button.guessing-letters.inWord {
+button.guessing-letters:not(:disabled) {
+  cursor: pointer;
+}
+button.guessing-letters:disabled {
+  background-color: lightgray;
+}
+button.guessing-letters.reveal:disabled.inWord {
   color: green;
+}
+button.guessing-letters.reveal:disabled:not(.inWord) {
+  color: red;
 }
 div.button-container {
   max-width: 500px;

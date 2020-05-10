@@ -1,4 +1,144 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+
+import { PhraseService } from './phrase-service';
+
+@Component({
+  selector: 'app-hangman',
+  templateUrl: './hangman.component.html',
+  styleUrls: ['./hangman.component.less'],
+})
+export class HangmanComponent implements OnInit {
+  phrase: string;
+  lastGuessedLetter: string;
+  _hiddenPhrase: string;
+  hiddenCharacters: string[];
+  isRevealed: boolean;
+  isContinued: boolean;
+  /**@type {Object<string, Letter>} */
+  lettersByName = {};
+  // lettersToGuess = [];
+  totalGuesses = 6;
+
+  constructor(private route: ActivatedRoute) {}
+
+  ngOnInit(): void {
+    let start = 'A'.charCodeAt(0);
+    let end = 'Z'.charCodeAt(0) + 1;
+    for (let i = start; i < end; i++) {
+      let char = String.fromCharCode(i);
+      this.lettersByName[char] = new Letter(char);
+    }
+    this.generateNewPhrase();
+  }
+
+  generateNewPhrase() {
+    this.route.paramMap.subscribe((params) => {
+      let settings = params.get('settings');
+      this.hiddenPhrase = PhraseService.getRandomPhrase(settings);
+    });
+  }
+
+  reset() {
+    this.generateNewPhrase();
+    this.isContinued = false;
+    this.isRevealed = false;
+  }
+
+  reveal() {
+    this.isRevealed = true;
+    this.isContinued = false;
+  }
+
+  continue() {
+    this.isContinued = true;
+    this.isRevealed = false;
+  }
+
+  get wrongGuesses() {
+    return this.lettersList.reduce((count: number, letter: Letter) => {
+      if (letter.wrong) {
+        return count + 1;
+      } else {
+        return count;
+      }
+    }, 0);
+  }
+  get lettersList() {
+    return Object.keys(this.lettersByName).map(
+      (key) => this.lettersByName[key]
+    );
+  }
+  get hideWhatParts() {
+    let hiding = partDecider.decideWhatToHideLong(
+      this.wrongGuesses,
+      this.totalGuesses
+    );
+    hiding.saved_man = !this.hasWon;
+    hiding.hanged_man = this.hasWon;
+    return hiding;
+  }
+
+  set hiddenPhrase(val) {
+    this._hiddenPhrase = val.toUpperCase();
+    this.lettersList.forEach((letter) => {
+      letter.reset();
+    });
+    this.hiddenCharacters = this._hiddenPhrase.split('');
+    this.hiddenCharacters.forEach((char) => {
+      let letter = this.lettersByName[char];
+      if (letter) {
+        letter.inWord = true;
+      }
+    });
+  }
+
+  get hiddenPhrase() {
+    return this._hiddenPhrase;
+  }
+
+  get displayPhrase() {
+    let hiddenLetters = this.hiddenPhrase.toUpperCase().split('');
+    let displayCharacters = hiddenLetters.map((character) => {
+      let letter = this.lettersByName[character];
+      if (this.isRevealed) {
+        return character;
+      } else if (letter) {
+        if (letter.guessed === false) {
+          return '_';
+        } else {
+          return letter.name;
+        }
+      } else {
+        return character;
+      }
+    });
+    return displayCharacters.join('\u00A0');
+  }
+
+  get hasWon() {
+    if (this.hasLost) {
+      return false;
+    }
+    return this.hiddenCharacters.reduce((winning, char) => {
+      let letter = this.lettersByName[char];
+      let okay = !letter || letter.guessed;
+      return winning && okay;
+    }, true);
+  }
+
+  get hasLost() {
+    return this.wrongGuesses >= this.totalGuesses;
+  }
+
+  get hasCompleted() {
+    return this.hasWon || this.hasLost;
+  }
+
+  get disableButtons() {
+    return this.hasWon || (this.hasCompleted && !this.isContinued);
+  }
+}
 
 class Letter {
   constructor(char) {
@@ -158,108 +298,3 @@ const partDecider = {
   },
 };
 export { partDecider };
-
-@Component({
-  selector: 'app-hangman',
-  templateUrl: './hangman.component.html',
-  styleUrls: ['./hangman.component.less'],
-})
-export class HangmanComponent implements OnInit {
-  lastGuessedLetter: string;
-  _hiddenPhrase: string;
-  hiddenCharacters: string[];
-  /**@type {Object<string, Letter>} */
-  lettersByName = {};
-  // lettersToGuess = [];
-  totalGuesses = 6;
-
-  get wrongGuesses() {
-    return this.lettersList.reduce((count: number, letter: Letter) => {
-      if (letter.wrong) {
-        return count + 1;
-      } else {
-        return count;
-      }
-    }, 0);
-  }
-  get lettersList() {
-    return Object.keys(this.lettersByName).map(
-      (key) => this.lettersByName[key]
-    );
-  }
-  get hideWhatParts() {
-    let hiding = partDecider.decideWhatToHideLong(
-      this.wrongGuesses,
-      this.totalGuesses
-    );
-    hiding.saved_man = !this.hasWon;
-    hiding.hanged_man = this.hasWon;
-    return hiding;
-  }
-
-  set hiddenPhrase(val) {
-    this._hiddenPhrase = val.toUpperCase();
-    this.lettersList.forEach((letter) => {
-      letter.reset();
-    });
-    this.hiddenCharacters = this._hiddenPhrase.split('');
-    this.hiddenCharacters.forEach((char) => {
-      let letter = this.lettersByName[char];
-      if (letter) {
-        letter.inWord = true;
-      }
-    });
-  }
-
-  get hiddenPhrase() {
-    return this._hiddenPhrase;
-  }
-
-  get displayPhrase() {
-    let hiddenLetters = this.hiddenPhrase.toUpperCase().split('');
-    let displayCharacters = hiddenLetters.map((character) => {
-      let letter = this.lettersByName[character];
-      if (letter) {
-        if (letter.guessed === false) {
-          return '_';
-        } else {
-          return letter.name;
-        }
-      } else {
-        return character;
-      }
-    });
-    return displayCharacters.join('\u00A0');
-  }
-
-  get hasWon() {
-    if (this.hasLost) {
-      return false;
-    }
-    return this.hiddenCharacters.reduce((winning, char) => {
-      let letter = this.lettersByName[char];
-      let okay = !letter || letter.guessed;
-      return winning && okay;
-    }, true);
-  }
-
-  get hasLost() {
-    return this.wrongGuesses >= this.totalGuesses;
-  }
-
-  get hasComplete() {
-    return this.hasWon || this.hasLost;
-  }
-
-  constructor() {}
-
-  ngOnInit(): void {
-    let start = 'A'.charCodeAt(0);
-    let end = 'Z'.charCodeAt(0) + 1;
-    for (let i = start; i < end; i++) {
-      let char = String.fromCharCode(i);
-      this.lettersByName[char] = new Letter(char);
-    }
-    this.hiddenPhrase = "Happy Mother's Day!";
-  }
-}
