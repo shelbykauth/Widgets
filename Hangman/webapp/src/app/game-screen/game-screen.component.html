@@ -1,6 +1,26 @@
-<p>game-screen works!</p>
+Missed Guesses: {{ wrongGuesses }} / {{ totalGuesses }}
+<br />
+<app-gallows-image
+  [wrongGuesses]="wrongGuesses"
+  [totalGuesses]="totalGuesses"
+></app-gallows-image>
 
-<form #dummyForm="ngForm">
+<p class="display-phrase">{{ displayPhrase }}</p>
+
+<div class="button-container">
+  <button
+    *ngFor="let letter of lettersList"
+    [value]="letter.name"
+    (click)="letter.guess()"
+    [disabled]="letter.guessed"
+    class="guessing-letters clickable"
+    [class.inWord]="letter.inWord"
+  >
+    {{ letter.name }}
+  </button>
+</div>
+
+<form id="DebugForm" #debugForm="ngForm">
   <br />
   Total Guesses: {{ totalGuesses }}
   <br />
@@ -11,19 +31,4 @@
     min="0"
     max="6"
   />
-  <br />
-  Wrong Guesses: {{ wrongGuesses }}
-  <br />
-  <input
-    name="wrongGuesses"
-    [(ngModel)]="wrongGuesses"
-    type="range"
-    min="0"
-    [max]="totalGuesses"
-  />
 </form>
-
-<app-gallows-image
-  [wrongGuesses]="wrongGuesses"
-  [totalGuesses]="totalGuesses"
-></app-gallows-image>
