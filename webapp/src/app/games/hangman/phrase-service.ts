@@ -10,6 +10,19 @@ const myPhrases = {
     'Spoonful of sugar',
     "Have a Fan - freaking - tastic mother's day",
   ],
+  [512]: [
+    'Happy Anniversary!',
+    'Happy 28 Years!',
+    'I love you guys',
+    'Enjoy your special day',
+    'Marie and Eddie',
+    'Marie and Eddy',
+    'A Night to Remember',
+    'Mom and Dad',
+    'Together Forever',
+    'White picket fence and two point five kids',
+    '28 Years',
+  ],
 };
 const allPhrases = [];
 for (let set in myPhrases) {
